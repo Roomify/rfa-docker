@@ -36,7 +36,7 @@ container. Both containers should be linked and the Roomify for Accommodations d
 ### Building the image standalone
 
 ```
-docker run --rm --name commerce_kickstart --link db:mysql capgemini/rfa-docker:latest
+docker run --rm --name rfa --link db:mysql Roomify/rfa-docker:latest
 ```
 
 ...where db:mysql matches the name and alias of your DB instance. The values from your linked DB instance will be used to complete the setup.
