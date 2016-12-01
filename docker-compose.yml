@@ -17,4 +17,4 @@ db:
     MYSQL_PASSWORD: drupal
     MYSQL_ROOT_PASSWORD: password
   volumes:
-    - /var/lib/mysql
+    - rfa-db:/var/lib/mysql
