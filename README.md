@@ -15,7 +15,7 @@ The image must be linked with a database container (e.g. mysql).
 
 ### Building with Docker compose
 
-- Ensure you have Docker and Docker compose installed. See [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/) to get started. If you are using Mac you will probably need to install [boot2docker](http://boot2docker.io/)
+- Ensure you have Docker and Docker compose installed. See [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/) to get started.
 - Build the Dockerfile:
 
 ```
@@ -27,11 +27,12 @@ docker-compose build
 - Run the Docker image
 
 ```
-docker-compose up -d
+docker-compose up
 ```
 
 This should bring up 2 containers, 1 Drupal RfA/PHP/Apache and a second MySQL
-container. Both containers should be linked and the Roomify for Accommodations database should be installed on startup.
+container. Both containers should be linked and the Roomify for Accommodations database will be installed on startup.
+Once both containers are up, visit http://localhost:8001/ - you may use the credentials admin/admin to login.
 
 ### Building the image standalone
 
