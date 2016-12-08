@@ -2,6 +2,8 @@
 
 Creates a [Docker](https://www.docker.com/) container for demoing [Roomify for Accommodations](https://github.com/roomify/roomify).
 
+:bangbang::bangbang: This docker code is provided for local evaluation purposes only, and is not intended for production use. Please note that Roomify cannot provide advice or support for docker/docker-compose specific issues :bangbang::bangbang:
+
 The image contains the following -
 
 * PHP 7.0 + Apache
