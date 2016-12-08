@@ -34,7 +34,7 @@ docker-compose up
 
 This should bring up 2 containers, 1 Drupal RfA/PHP/Apache and a second MySQL
 container. Both containers should be linked and the Roomify for Accommodations database will be installed on startup.
-Once both containers are up, visit http://localhost:8001/ - you may use the credentials admin/admin to login.
+Once both containers are up, visit [http://localhost:8001/](http://localhost:8001/) - you may use the credentials admin/admin to login.
 
 ### Building the image standalone
 
