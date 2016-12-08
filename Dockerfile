@@ -1,5 +1,8 @@
 FROM php:7.0-apache
 
+# Find the latest release tag here: https://github.com/Roomify/RfA/releases/latest
+ENV RFA_VERSION=1.2
+
 RUN a2enmod rewrite
 
 RUN apt-get update && apt-get -y install git mysql-client vim-tiny wget
@@ -30,11 +33,8 @@ COPY config/php.ini /usr/local/etc/php/
 
 WORKDIR /var/www/html
 
-ENV RFA_VERSION 1.1.2
-
-# FIXME
-# RUN curl -fSL "https://github.com/Roomify/roomify/releases/download/${RFA_VERSION}/roomify-accommodations-default.${RFA_VERSION}.zip" -o rfa.zip \
-RUN curl -fSL "https://dl.dropboxusercontent.com/u/1957870/roomify-accommodations-default.1.1.1.zip" -o rfa.zip \
+# Download RfA.
+RUN curl -fSL "https://github.com/Roomify/RfA/releases/download/${RFA_VERSION}/roomify-accommodations-default.${RFA_VERSION}.zip" -o rfa.zip \
   && unzip rfa.zip \
   && rm rfa.zip \
   && find roomify-accommodations/ -mindepth 1 -maxdepth 1 -exec mv -t . -- {} + \
