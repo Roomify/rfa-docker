@@ -1,33 +1,35 @@
 # For customization options see: https://docs.docker.com/compose/yml/
-web:
-  build: .
-  links:
-    - db:mysql
-  container_name: rfa_web
-  networks:
-    - backend
-    - frontend
-  ports:
-    - "8001:80"
-  volumes:
-    - /var/www/html
-    - /var/www/private
+version: '2'
+services:
+  web:
+    build: .
+    links:
+      - db:mysql
+    container_name: rfa_web
+    networks:
+      - backend
+      - frontend
+    ports:
+      - "8001:80"
+    volumes:
+      - /var/www/html
+      - /var/www/private
 
-db:
-  image: mysql
-  container_name: rfa_db
-  networks:
-    - backend
-  environment:
-    MYSQL_DATABASE: drupal
-    MYSQL_USER: drupal
-    MYSQL_PASSWORD: drupal
-    MYSQL_ROOT_PASSWORD: password
-  volumes:
-    - rfa-db:/var/lib/mysql
+  db:
+    image: mysql
+    container_name: rfa_db
+    networks:
+      - backend
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - rfa-db:/var/lib/mysql
 
-networks:
-  frontend:
-    driver: bridge
-  backend:
-    driver: bridge
+  networks:
+    frontend:
+      driver: bridge
+    backend:
+      driver: bridge
