@@ -1,7 +1,7 @@
 FROM php:7.0-apache
 
 # Find the latest release tag here: https://github.com/Roomify/RfA/releases/latest
-ENV RFA_VERSION=1.3.8
+ENV RFA_VERSION=1.3.9
 
 RUN a2enmod rewrite
 
